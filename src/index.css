@@ -1,0 +1,323 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  background: #0d0820;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 20px;
+  line-height: 1.15;
+  color: #f4e9ff;
+  -webkit-font-smoothing: none;
+  user-select: none;
+}
+
+.font-title {
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  letter-spacing: 0;
+}
+
+/* ---------- Pixel UI ---------- */
+.px-box {
+  border: 4px solid #07040f;
+  box-shadow:
+    inset -4px -4px 0 rgba(0, 0, 0, 0.35),
+    inset 4px 4px 0 rgba(255, 255, 255, 0.1),
+    0 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.px-btn {
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  padding: 8px 12px;
+  background: #ff8a2b;
+  color: #2a1200;
+  border: 4px solid #07040f;
+  box-shadow:
+    inset -4px -4px 0 #c2570b,
+    inset 4px 4px 0 #ffb066;
+  cursor: pointer;
+  transition: transform 0.05s;
+}
+.px-btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+.px-btn:active:not(:disabled) {
+  transform: translateY(3px);
+}
+.px-btn:disabled {
+  filter: grayscale(1) brightness(0.55);
+  cursor: not-allowed;
+}
+.px-btn.green {
+  background: #5fd35f;
+  color: #06230a;
+  box-shadow:
+    inset -4px -4px 0 #2f9a3b,
+    inset 4px 4px 0 #9bf09b;
+}
+.px-btn.purple {
+  background: #9a6bff;
+  color: #14072e;
+  box-shadow:
+    inset -4px -4px 0 #5f35c4,
+    inset 4px 4px 0 #c6aaff;
+}
+.px-btn.ghost {
+  background: #2b1d55;
+  color: #e9dcff;
+  box-shadow:
+    inset -4px -4px 0 #170e33,
+    inset 4px 4px 0 #473585;
+}
+
+/* ---------- Scène ---------- */
+.sky {
+  background: linear-gradient(180deg, #0a0620 0%, #1c0f45 45%, #4a2078 80%, #7a3a86 100%);
+}
+
+.counter {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 46px, rgba(0, 0, 0, 0.22) 46px 50px),
+    linear-gradient(180deg, #b8793a 0 8px, #8a5424 8px 100%);
+  border-top: 4px solid #07040f;
+  box-shadow: inset 0 4px 0 #dba15e;
+}
+
+.ground {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 28px, rgba(255, 255, 255, 0.03) 28px 32px),
+    linear-gradient(180deg, #2a1650, #170c33);
+}
+
+.awning-a {
+  background: #ff8a2b;
+}
+.awning-b {
+  background: #7b3fe4;
+}
+
+.jar-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.05));
+  border: 4px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px 6px 14px 14px;
+}
+
+.bubble {
+  background: #fff8e8;
+  border: 4px solid #07040f;
+  box-shadow:
+    inset -3px -3px 0 #e4d6b4,
+    0 3px 0 rgba(0, 0, 0, 0.4);
+}
+.bubble-tail {
+  width: 12px;
+  height: 12px;
+  background: #fff8e8;
+  border-right: 4px solid #07040f;
+  border-bottom: 4px solid #07040f;
+  transform: rotate(45deg);
+  margin-top: -8px;
+}
+
+/* ---------- Animations ---------- */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.twinkle {
+  animation: twinkle 3s steps(4) infinite;
+}
+
+@keyframes walkIn {
+  from {
+    transform: translateX(-70px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.walk-in {
+  animation: walkIn 0.5s steps(6) both;
+}
+
+@keyframes hopOut {
+  0% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-24px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px) translateX(60px);
+    opacity: 0;
+  }
+}
+.hop-out {
+  animation: hopOut 0.9s steps(9) both;
+}
+
+@keyframes stormOut {
+  0% {
+    transform: translateX(0);
+  }
+  15%,
+  45% {
+    transform: translateX(-6px);
+  }
+  30%,
+  60% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+}
+.storm-out {
+  animation: stormOut 0.9s steps(9) both;
+  filter: sepia(1) saturate(4) hue-rotate(-30deg);
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+.wiggle {
+  animation: wiggle 0.25s steps(2) infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.bob {
+  animation: bob 1.4s steps(4) infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+}
+.float-up {
+  animation: floatUp 1.3s steps(12) both;
+}
+
+@keyframes jarShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+.jar-shake {
+  animation: jarShake 0.3s steps(4);
+}
+
+@keyframes flyAcross {
+  from {
+    transform: translateX(-80px);
+  }
+  to {
+    transform: translateX(calc(100vw + 80px));
+  }
+}
+@keyframes flap {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.55);
+  }
+}
+.flap {
+  animation: flap 0.35s steps(2) infinite;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.95;
+  }
+}
+.flicker {
+  animation: flicker 1.6s steps(5) infinite;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.pop-in {
+  animation: popIn 0.3s steps(4) both;
+}
+
+@keyframes batDive {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-40px, 70px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.bat-dive {
+  animation: batDive 0.6s steps(8);
+}
