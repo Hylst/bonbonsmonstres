@@ -1,3 +1,4 @@
+import { InfoModal } from './components/InfoModal';
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Sprite } from "./Sprite";
 import {
@@ -54,6 +55,7 @@ const fmtTime = (g: Game) => {
 const patienceColor = (r: number) => (r > 0.5 ? "#5fd35f" : r > 0.25 ? "#ffc531" : "#ff4d4d");
 
 export default function App() {
+  const [showInfo, setShowInfo] = useState(false);
   const gRef = useRef<Game>(null as unknown as Game);
   if (!gRef.current) gRef.current = loadGame();
   const [, setTick] = useState(0);
@@ -551,6 +553,18 @@ export default function App() {
           </aside>
         </div>
       </div>
+
+      {/* Bouton Infos technique */}
+      <button
+        onClick={() => setShowInfo(true)}
+        className="fixed top-2.5 right-2.5 z-[100] flex items-center gap-1 rounded-lg border border-slate-700/60 bg-slate-900/80 px-2 py-1 text-xs text-amber-200 shadow-md backdrop-blur hover:bg-slate-800 transition cursor-pointer select-none"
+        title="Comment ce jeu a été fait"
+        aria-label="Infos sur le jeu"
+      >
+        <span>ℹ️</span>
+        <span className="hidden sm:inline">Infos</span>
+      </button>
+      <InfoModal isOpen={showInfo} onClose={() => setShowInfo(false)} />
     </div>
   );
 }
