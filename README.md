@@ -24,3 +24,7 @@ npm run dev
 # Compiler pour la production (build single-file)
 npm run build
 ```
+
+## Licence
+
+Code : AGPL-3.0-or-later. Voir `LICENSE`.
