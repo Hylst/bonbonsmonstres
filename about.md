@@ -3,7 +3,7 @@
 **Bonbons Monstres : Chaud Devant** est un gestion / tycoon arcade developpe par **Geoffroy Streit** (alias **Hylst**).
 
 ## Le jeu
-Gère une confiserie nocturne pour monstres voraces : prépare les yeux gélatineux, chauffe les chaudrons, encaisse les pièces d'or et améliore ton étal avant le rush de minuit.
+Gère une confiserie nocturne pour monstres voraces : sers les yeux gélatineux, remplis les bocaux, encaisse les pièces d'or et améliore ton stand avant le rush de minuit.
 
 ## Le createur
 - Developpeur d'applications, ancien graphiste et compositeur

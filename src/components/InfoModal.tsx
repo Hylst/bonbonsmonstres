@@ -39,13 +39,14 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
             <strong className="text-pink-400">Interactions :</strong> Clics souris rapides ou taps mobiles sur les bocaux, validation des commandes, achats d améliorations de comptoir.
           </p>
           <p>
-            <strong className="text-pink-400">Architecture :</strong> Game loop avec gestion de files d attente de clients monstres, gestion des stocks et chaudrons, arbre d upgrades économiques.
+            <strong className="text-pink-400">Architecture :</strong> Game loop avec gestion de files d attente de clients monstres, gestion des stocks et des bocaux, arbre d upgrades économiques.
           </p>
           <p>
             <strong className="text-pink-400">Algorithmes notables :</strong> File d attente à patience dégressive avec seuils de pourboire, équilibrage de rentabilité des confiseries, tirage aléatoire des goûts des monstres.
           </p>
         </div>
 
+        <p className="px-4 pb-1 text-center text-[11px] text-slate-400">Créé par Geoffroy Streit (Hylst) avec l'aide d'une IA.</p>
         <div className="bg-slate-950 p-3 sm:p-4 text-center border-t border-slate-800">
           <button
             onClick={onClose}
